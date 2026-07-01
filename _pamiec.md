@@ -28,10 +28,36 @@
 - Lekcja 1 ✅: teoria — czym jest Java, JDK, JVM, Maven, JUnit, framework, test API
 - Lekcja 2 ✅: przygotowanie środowiska (JDK 21, IntelliJ, Git, Claude Desktop)
 - Lekcja 2.5 ✅: git config (user.name, user.email), GitHub repo nauka_java, klon lokalny, push plików
+- Lekcja 3 (w toku): pierwszy test w JUnit
+  - Dodano JUnit 5.11.0 do pom.xml jako dependency, Maven Sync wykonany
+  - Stworzono PierwszyTest.java w src/test/java
+  - Napisano pierwszy @Test (pusty) — przeszedł ("1 test passed")
+  - Omówiono: klasa, metoda, void, @Test, import, pom.xml struktura, groupId/artifactId/version, Maven vs Gradle
+
+## Co Norbert rozumie po sesji (stan na 1 lipca 2026)
+
+- pom.xml = konfiguracja projektu (nie Java), XML to osobny format
+- dependency = biblioteka pobierana przez Maven z internetu
+- groupId/artifactId/version = unikalny adres każdej biblioteki/projektu w Maven
+- src/main/java = kod aplikacji, src/test/java = testy (standardowa struktura Maven)
+- klasa = pojemnik na kod, każdy plik .java = jedna klasa o tej samej nazwie
+- @Test = adnotacja JUnit — oznacza metodę jako test do uruchomienia
+- adnotacje @ istnieją w całej Javie, nie tylko JUnit
+- void = metoda nic nie zwraca (w przeciwieństwie do int, String itd.)
+- import = mówi Javie skąd pochodzi użyta klasa/adnotacja
+
+## Co sprawiło trudność
+
+- void vs deklaracja zmiennej — nie siedzi jeszcze twardo, wymaga powtórzenia
+- adnotacje @ — ogólny pomysł jest, ale potrzeba więcej przykładów
+- **KLUCZOWE:** Norbert chce rozumieć PRZED pisaniem kodu, nie po — Claude ma tłumaczyć każdy element zanim każe cokolwiek pisać
+- IntelliJ: snap intellij-idea-community instaluje unified distribution — pokazuje "Start Free Trial" ale działa za darmo
 
 ## Co robimy następnie
 
-- Lekcja 3: pierwszy test w JUnit (dodanie JUnit 5 do projektu Maven, @Test, uruchomienie)
+- Lekcja 3 dokończenie: napisanie testu który coś sprawdza (assertEquals, assertTrue)
+- Lekcja 3: świadomie nieudany test — żeby zobaczyć jak wygląda fail
+- Lekcja 3: uruchomienie testów przez Maven w terminalu (mvn test)
 
 ## Jak pracujemy razem
 
@@ -42,6 +68,12 @@
 - Gdy Norbert pokazuje screenshot z terminala lub aplikacji — analizować co widać i reagować konkretnie
 - Norbert chce rozumieć DLACZEGO, nie tylko JAK
 - Plik `plan-lekcji.md` to nasza wspólna mapa postępów — aktualizować po każdej ukończonej lekcji
+- **PRZED każdym przejściem do nowego tematu — zrobić test z CAŁEJ dotychczasowej wiedzy, nie tylko ostatniej lekcji**
+- **Co godzinę (lub przy naturalnej przerwie) — krótki test powtórkowy z całości materiału**
+- Oceniać obiektywnie i rygorystycznie w skali 0-100, bez taryfy ulgowej
+- Po teście: przy każdej złej odpowiedzi dać wyjaśnienie z głupkowatym/śmiesznym przykładem — żeby zostało w pamięci
+- Norbert sygnalizował że za szybko szliśmy — lepiej wolniej z pełnym zrozumieniem niż szybko w ciemno
+- **MINIMUM 90/100 na sprawdzianie żeby przejść dalej — bez wyjątków. Poniżej 90 = powtarzamy materiał i robimy nowy test.**
 
 ## ZASADY DLA CLAUDE — obowiązkowe w każdej sesji
 
