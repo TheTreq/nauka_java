@@ -33,6 +33,16 @@
   - Stworzono PierwszyTest.java w src/test/java
   - Napisano pierwszy @Test (pusty) — przeszedł ("1 test passed")
   - Omówiono: klasa, metoda, void, @Test, import, pom.xml struktura, groupId/artifactId/version, Maven vs Gradle
+  - Lekcja 3 NIE UKOŃCZONA — brakuje: assertEquals, świadomie nieudany test, mvn test
+
+## Dodatkowe rzeczy zrobione w tej sesji (poza planem lekcji)
+
+- Stworzono sciagawka.md — słownik pojęć z głupimi skojarzeniami (JVM="Jezu Włącz Mi", MVN="Menedżer Wszystkiego Nie?")
+- Stworzono sprawdziany/wyniki.md — dziennik sprawdzianów z ocenami
+- Zainstalowano ntfy na telefonie Norberta, skonfigurowano kanał: norbert-nauka-java
+- Stworzono ~/notify_sprawdzian.sh — skrypt do wysyłania powiadomień po sprawdzianie
+- .bashrc ma błąd składni (stray '{') — działa ale source wyrzuca warning, do naprawy
+- PLAN: yeetrack.xyz jako dashboard sprawdzianów — każdy sprawdzian dostaje stronę, powiadomienie = link
 
 ## Co Norbert rozumie po sesji (stan na 1 lipca 2026)
 
@@ -45,19 +55,38 @@
 - adnotacje @ istnieją w całej Javie, nie tylko JUnit
 - void = metoda nic nie zwraca (w przeciwieństwie do int, String itd.)
 - import = mówi Javie skąd pochodzi użyta klasa/adnotacja
+- Maven vs JUnit: Maven = menedżer całości, JUnit = biblioteka którą Maven dostarcza
+- biblioteka vs framework: biblioteka = narzędzie które TY wywołujesz, framework = narzuca strukturę
+- sprawdzian #4: 97/100 ✅ (próg 90 przekroczony)
 
 ## Co sprawiło trudność
 
-- void vs deklaracja zmiennej — nie siedzi jeszcze twardo, wymaga powtórzenia
-- adnotacje @ — ogólny pomysł jest, ale potrzeba więcej przykładów
+- void vs deklaracja zmiennej — poprawione w tej sesji, teraz rozumie
+- adnotacje @ — ogólny pomysł jest, potrzeba więcej przykładów przy kolejnych lekcjach
 - **KLUCZOWE:** Norbert chce rozumieć PRZED pisaniem kodu, nie po — Claude ma tłumaczyć każdy element zanim każe cokolwiek pisać
-- IntelliJ: snap intellij-idea-community instaluje unified distribution — pokazuje "Start Free Trial" ale działa za darmo
+- IntelliJ: snap intellij-idea-community = unified distribution — "Start Free Trial" to tylko oferta, działa za darmo
+- .bashrc: podczas dodawania funkcji notify wkradł się błąd składni — do naprawy na początku następnej sesji
 
 ## Co robimy następnie
 
-- Lekcja 3 dokończenie: napisanie testu który coś sprawdza (assertEquals, assertTrue)
-- Lekcja 3: świadomie nieudany test — żeby zobaczyć jak wygląda fail
-- Lekcja 3: uruchomienie testów przez Maven w terminalu (mvn test)
+**Priorytet 1 — projekt poboczny (yeetrack.xyz):**
+- Przejrzeć kod yeetrack.xyz na komputerze Norberta
+- Dodać endpoint/stronę dla każdego sprawdzianu
+- Powiadomienie ntfy = link do strony ze szczegółami sprawdzianu
+- Przemek klika link → widzi pytania, odpowiedzi, ocenę
+
+**Priorytet 2 — Lekcja 3 dokończenie:**
+- assertEquals, assertTrue — co to jest i jak działa (tłumaczyć PRZED pisaniem)
+- Świadomie nieudany test — jak wygląda fail
+- mvn test w terminalu
+
+## Środowisko / pliki do zapamiętania
+
+- ~/notify_sprawdzian.sh — skrypt do powiadomień ntfy
+- ~/nauka_java/sciagawka.md — słownik pojęć
+- ~/nauka_java/sprawdziany/wyniki.md — dziennik sprawdzianów
+- ntfy kanał: norbert-nauka-java
+- yeetrack.xyz — domena Norberta, NAS server, kod na tym komputerze (lokalizacja do ustalenia)
 
 ## Jak pracujemy razem
 
