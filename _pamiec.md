@@ -1,6 +1,6 @@
 # Pamięć o Norbercie i naszej współpracy
 
-> ⚡ **Zacznij tutaj (stan na 2 lipca 2026, wieczór):** Obsidian **w pełni działa** — sejf `~/nauka_java/sciagawka/` otwarty i potwierdzony jako czytelny (patrz "Sesja 2 lipca 2026, wieczór — Obsidian naprawiony" niżej). Temat zamknięty. Teraz: **powtórka wszystkich słabych punktów ze Sprawdzianów #5/#6** (Git w terminalu na żywo, framework vs biblioteka, pom.xml, bytecode, adnotacja, test API) — dopiero PO pełnej powtórce, formalny **Egzamin #7** (nowa nazwa dla "sprawdzianu" milowego, patrz niżej). ŻADNEGO egzaminu przed ukończeniem powtórki — to twardy warunek od Norberta.
+> ⚡ **Zacznij tutaj (stan na 2 lipca 2026, wieczór):** Obsidian **w pełni działa** — sejf otwarty pod `~/nauka_java/podrecznik/` (uwaga: nazwa folderu zmieniona ze `sciagawka` na `podrecznik` tego samego wieczoru, patrz "Sesja 2 lipca 2026, wieczór" niżej) i potwierdzony jako czytelny. Podręcznik ma teraz podfoldery `java/`, `linux/`, `narzedzia/` zamiast jednej płaskiej listy. Temat zamknięty. Teraz: **powtórka wszystkich słabych punktów ze Sprawdzianów #5/#6** (Git w terminalu na żywo, framework vs biblioteka, pom.xml, bytecode, adnotacja, test API) — dopiero PO pełnej powtórce, formalny **Egzamin #7** (nowa nazwa dla "sprawdzianu" milowego, patrz niżej). ŻADNEGO egzaminu przed ukończeniem powtórki — to twardy warunek od Norberta.
 
 ## Kim jest Norbert
 
@@ -51,7 +51,9 @@
 - Po ponownym zalogowaniu Obsidian **faktycznie działa** — potwierdzone przez Norberta, że widzi okno aplikacji. Wcześniejsze podejrzenie o zepsutym launcherze (wrapper scripts snapa, `desktop-init.sh`/`desktop-common.sh`/`desktop-gnome-specific.sh`) okazało się fałszywym tropem — chodziło po prostu o to, że snap w trybie classic wymaga relogu żeby poprawnie się zainicjować, i po nim działa normalnie.
 - **W pełni potwierdzone i zamknięte:** Norbert otworzył `~/nauka_java/sciagawka/` jako sejf (vault), pliki i `index.md` renderują się poprawnie z działającymi linkami. Po drodze napotkany i rozwiązany osobny problem: okno Obsidiana nie dało się złapać/przesunąć myszką (znany efekt przeskalowanego interfejsu Norberta na GNOME/Wayland — dotyczy też innych aplikacji, nie tylko Obsidiana). Rozwiązanie: **Super + przeciągnięcie** w dowolnym miejscu okna przesuwa je bez potrzeby chwytania paska tytułu; alternatywnie **Super + Strzałka w górę** maksymalizuje okno. Warto pamiętać ten trik przy innych aplikacjach z tym samym objawem.
 - **Wygaszanie/przyciemnianie ekranu** — Norbert zgłosił że ekran ściemnia się za często. Podano dwie opcje (GUI: Ustawienia → Zasilanie; terminal: `gsettings set org.gnome.desktop.session idle-delay 0` + `gsettings set org.gnome.settings-daemon.plugins.power idle-dim false`). Norbert zgłosił że ogarnął to sam — nie wiadomo którą metodą, nieistotne, temat zamknięty.
-- Norbert poprosił żeby każda tłumaczona komenda terminala/systemowa trafiała też do ściągawki, nie tylko była wytłumaczona ustnie — nowy stały rozdział `sciagawka/08-system-i-narzedzia.md` (Snap vs APT, `snap install`, `snap list`, `gsettings`).
+- Norbert poprosił żeby każda tłumaczona komenda terminala/systemowa trafiała też do podręcznika, nie tylko była wytłumaczona ustnie — nowy stały rozdział (obecna ścieżka: `podrecznik/narzedzia/02-system-i-pakiety.md`, Snap vs APT, `snap install`, `snap list`, `gsettings`).
+- **Przebudowa struktury podręcznika (2 lipca 2026, wieczór):** Norbert uczy się naraz kilku rzeczy (Java, Linux, Git, narzędzia) i płaska lista rozdziałów przestała się skalować. Nowa struktura z podfolderami: `podrecznik/java/` (6 rozdziałów), `podrecznik/linux/` (nawigacja terminalowa: pwd/ls/cd), `podrecznik/narzedzia/` (Git, system/pakiety — będzie się rozrastać o kolejne narzędzia jak IntelliJ). Cały folder `sciagawka/` przemianowany na `podrecznik/` na wyraźną prośbę Norberta ("to wszystko ma się nazywać podręcznik"). `00-Index.md` zaktualizowany pod nową strukturę.
+- **Norbert wprowadził twardą zasadę współpracy tego wieczoru: Claude musi pytać o zgodę PRZED każdą zmianą, nawet w plikach notatek/dokumentacji (nie tylko w kodzie), i nie może łączyć opisu problemu z jego naprawą w jednej turze.** Zapisane szczegółowo w pamięci Claude jako [[feedback_no_code_writing]] — to zasada nadrzędna, obowiązuje też w kolejnych sesjach.
 
 ## Dodatkowe rzeczy zrobione w tej sesji (poza planem lekcji)
 
@@ -124,7 +126,7 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
 ## Środowisko / pliki do zapamiętania
 
 - ~/notify_sprawdzian.sh — skrypt do powiadomień ntfy
-- ~/nauka_java/sciagawka/ — słownik pojęć, teraz jako folder osobnych plików + index.md (spis treści). Norbert czyta to w Obsidianie, nie w IntelliJ.
+- ~/nauka_java/podrecznik/ — słownik pojęć, jako sejf Obsidiana z podfolderami `java/`, `linux/`, `narzedzia/` i `00-Index.md` jako głównym spisem treści (dawniej `sciagawka/`, przemianowane 2 lipca 2026 wieczorem). Norbert czyta to w Obsidianie, nie w IntelliJ.
 - ~/nauka_java/sprawdziany/wyniki.md — dziennik sprawdzianów
 - ntfy kanał: norbert-nauka-java
 - yeetrack.xyz — domena Norberta, NAS server, kod na tym komputerze (lokalizacja do ustalenia)
@@ -138,7 +140,7 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
 - Gdy Norbert pokazuje screenshot z terminala lub aplikacji — analizować co widać i reagować konkretnie
 - Norbert chce rozumieć DLACZEGO, nie tylko JAK
 - Plik `plan-lekcji.md` to nasza wspólna mapa postępów — aktualizować po każdej ukończonej lekcji
-- **Każda komenda terminala/systemowa, którą tłumaczę w rozmowie, ma też trafić do `sciagawka/` w odpowiednim rozdziale** — nie tylko zostać wytłumaczona ustnie i zapomniana. Dotyczy to też rzeczy spoza samej Javy (snap, apt, gsettings itp.), jeśli pojawiają się w trakcie sesji.
+- **Każda komenda terminala/systemowa, którą tłumaczę w rozmowie, ma też trafić do `podrecznik/` w odpowiednim rozdziale** — nie tylko zostać wytłumaczona ustnie i zapomniana. Dotyczy to też rzeczy spoza samej Javy (snap, apt, gsettings itp.), jeśli pojawiają się w trakcie sesji. Komendy Linuksa/terminala → `podrecznik/linux/`, konkretne narzędzia (Git, IntelliJ, Snap) → `podrecznik/narzedzia/`, Java → `podrecznik/java/`.
 - **PRZED każdym przejściem do nowego tematu — zrobić test z CAŁEJ dotychczasowej wiedzy, nie tylko ostatniej lekcji**
 - **Co godzinę (lub przy naturalnej przerwie) — krótki test powtórkowy z całości materiału**
 - Oceniać obiektywnie i rygorystycznie w skali 0-100, bez taryfy ulgowej
@@ -149,7 +151,7 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
 - **Formalny, punktowany test milowy = "Egzamin" (nie "sprawdzian").** "Sprawdzian" to teraz swobodne określenie na bieżące sprawdzanie czegoś (np. output terminala) w trakcie ćwiczeń — nie mylić tych dwóch.
 - **ŻADNEGO Egzaminu, dopóki Norbert nie przejdzie i nie powtórzy WSZYSTKICH konkretnych rzeczy, których nie wiedział w poprzedniej nieudanej próbie.** Twardy warunek wstępny, nie sugestia — patrz "Priorytet 1" niżej po aktualny stan tej powtórki.
 - Tłumaczenia: rozbudowane, barwne, kreatywne, ale też techniczne — nowe pojęcia zawsze łączyć z poprzednimi (JVM, JUnit, itd.) w spójną narrację, nie podawać izolowanych faktów
-- Analogie mają być spójne z tymi już użytymi (sprawdzić `sciagawka.md` przed wymyśleniem nowej) — lepiej brak analogii niż niespójna/wymuszona
+- Analogie mają być spójne z tymi już użytymi (sprawdzić odpowiedni rozdział w `podrecznik/java/` przed wymyśleniem nowej) — lepiej brak analogii niż niespójna/wymuszona
 - Ton: miły, sympatyczny, wymagający — jak przyjaciel/nauczyciel, nie sędzia
 - NIE pytać Norberta czy chce przerwę / czy ma energię, jeśli sam tego nie zasygnalizuje — on prowadzi tempo
 - **Kalibracja (kluczowe):** Norbert nie ma doświadczenia w programowaniu, potrzebuje miesięcy powtórek żeby utrwalić wiedzę. Będzie się mylił nawet w rzeczach na które wcześniej odpowiedział poprawnie — to normalne, nie regres, nie komentować tego jako coś niepokojącego
@@ -162,7 +164,7 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
 
 2. **W trakcie sesji, na bieżąco — nie czekać na "dogodny moment".** Sesja może się urwać w dowolnej sekundzie, bez ostrzeżenia — nie ma gwarancji że dojdzie do czystego "końca sesji", więc `_pamiec.md` nie może na to czekać.
 
-   **Co dokładnie liczy się jako "znacząca rzecz" (wymaga natychmiastowej aktualizacji `_pamiec.md`, a jeśli dotyczy Javy/systemu — też `sciagawka/`):**
+   **Co dokładnie liczy się jako "znacząca rzecz" (wymaga natychmiastowej aktualizacji `_pamiec.md`, a jeśli dotyczy Javy/systemu — też `podrecznik/`):**
    - Sprawdzian się zakończył (wynik + co poszło źle/dobrze) → `sprawdziany/wyniki.md` I `_pamiec.md`
    - Temat, który wcześniej sprawiał trudność, został **faktycznie zrozumiany** (nie tylko poruszony) → sekcja "Co Norbert rozumie"
    - Norbert poprawia moje podejście LUB wprost potwierdza że coś zadziałało dobrze → nowa zasada w "Jak pracujemy razem" / "ZASADY DLA CLAUDE"
@@ -170,7 +172,7 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
    - Napotkany i naprawiony problem techniczny (bug, zła konfiguracja, coś co nie działało) → sekcja wydarzeń danej sesji
    - Zmienił się plan albo priorytet (co robimy dalej, w jakiej kolejności) → "Co robimy następnie"
    - Formalnie ukończona lekcja z `plan-lekcji.md` → oznaczyć `✅` tam I opisać w "Co już przerobiliśmy"
-   - Padła nowa, konkretna komenda terminala/systemowa → `sciagawka/` (patrz zasada 5 niżej), niezależnie od reszty
+   - Padła nowa, konkretna komenda terminala/systemowa → `podrecznik/` (patrz zasada 5 niżej), niezależnie od reszty
 
    **Co NIE wymaga natychmiastowej aktualizacji:**
    - Pytania doprecyzowujące, które niczego nie zmieniają w stanie wiedzy ani w planie
@@ -181,7 +183,7 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
 
 4. **Format aktualizacji** — w `_pamiec.md` zawsze zapisywać: co zostało zrobione, co Norbert rozumie, co sprawiło trudność, co jest następne. To ma być użyteczny brief dla nowej sesji, nie suchy log.
 
-5. **`sciagawka.md` zostało rozbite na folder `sciagawka/`** (2 lipca 2026) — jeden plik = jeden rozdział, `index.md` jest spisem treści z linkami do plików. Norbert czyta to w Obsidianie (osobno od IntelliJ), bo linki wewnątrz jednego pliku z myślnikiem `—` w nagłówku łamały się w podglądzie IntelliJ. Gdy dodajesz nową sekcję: stwórz nowy plik w `sciagawka/`, dodaj do niego link `[← powrót do spisu treści](index.md)` na górze i dole, i dopisz go do listy w `index.md`.
+5. **Podręcznik: `sciagawka.md` → folder `sciagawka/` (2 lipca 2026) → `podrecznik/` z podfolderami (2 lipca 2026, wieczór).** Norbert czyta to w Obsidianie (osobno od IntelliJ), bo linki wewnątrz jednego pliku z myślnikiem `—` w nagłówku łamały się w podglądzie IntelliJ — stąd rozbicie na osobne pliki. Aktualna struktura: `podrecznik/00-Index.md` (główny spis treści) + trzy podfoldery `java/`, `linux/`, `narzedzia/`, każdy z własną numeracją rozdziałów. Gdy dodajesz nową sekcję: stwórz nowy plik w odpowiednim podfolderze (Java → `java/`, komendy Linuksa/terminala ogólnie → `linux/`, konkretne narzędzie jak Git/IntelliJ/Snap → `narzedzia/`), dodaj do niego link `[← powrót do spisu treści](../00-Index.md)` na górze i dole (uwaga: `../`, bo plik jest teraz jeden poziom głębiej niż `00-Index.md`), i dopisz go do listy w `00-Index.md` pod właściwym działem.
 
 ## Projekt końcowy
 

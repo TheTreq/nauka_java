@@ -15,7 +15,7 @@
 
 ## 🐧 Linux
 
-_(dział czeka na pierwszy rozdział — nawigacja w terminalu: `cd`, `ls`, `pwd` itd.)_
+1. [NAWIGACJA W TERMINALU — pwd, ls, cd](linux/01-nawigacja.md)
 
 ## 🛠️ Narzędzia
 
