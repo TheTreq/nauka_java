@@ -1,6 +1,10 @@
 # Pamięć o Norbercie i naszej współpracy
 
-> ⚡ **Zacznij tutaj (stan na 2 lipca 2026, wieczór):** Obsidian **w pełni działa** — sejf otwarty pod `~/nauka_java/podrecznik/` (uwaga: nazwa folderu zmieniona ze `sciagawka` na `podrecznik` tego samego wieczoru, patrz "Sesja 2 lipca 2026, wieczór" niżej) i potwierdzony jako czytelny. Podręcznik ma teraz podfoldery `java/`, `linux/`, `narzedzia/` zamiast jednej płaskiej listy. Temat zamknięty. Teraz: **powtórka wszystkich słabych punktów ze Sprawdzianów #5/#6** (Git w terminalu na żywo, framework vs biblioteka, pom.xml, bytecode, adnotacja, test API) — dopiero PO pełnej powtórce, formalny **Egzamin #7** (nowa nazwa dla "sprawdzianu" milowego, patrz niżej). ŻADNEGO egzaminu przed ukończeniem powtórki — to twardy warunek od Norberta.
+> ⚡ **Zacznij tutaj (stan na koniec sesji 2 lipca 2026, wieczór):** Obsidian i podręcznik pojęć **w pełni ogarnięte i zamknięte jako temat** — sejf `~/nauka_java/podrecznik/` (dawniej `sciagawka/`), podzielony na `java/`, `linux/`, `narzedzia/`, otwiera się i renderuje poprawnie. Po drodze przećwiczone na żywo w terminalu: `git status`, `git add` (z wariantami `.`/`-u`/`-A`), `git commit -m` (w tym realny błąd `switch 'm' wymaga wartości` i jego naprawa), `git push`, `git mv` — Norbert samodzielnie zrobił pełny cykl add→commit→push, dwukrotnie, bez pomocy. **Drobny luźny koniec:** pusty plik `podrecznik/Bez nazwy.md` (przypadkowo stworzony przez Obsidiana) nadal czeka na decyzję czy go usunąć — zapytać na starcie.
+>
+> **Najważniejsze na start nowej sesji:** kontynuować **Priorytet 1** niżej — pełna powtórka słabych punktów ze Sprawdzianów #5/#6 (Git koncepcyjnie już przećwiczony w terminalu, ale framework vs biblioteka / pom.xml / bytecode / adnotacja / test API jeszcze nie odhaczone w tej sesji). **ŻADNEGO Egzaminu #7, dopóki ta lista nie jest przerobiona w całości — to twardy warunek od Norberta, patrz [[feedback_teaching_style]] w pamięci Claude.**
+>
+> **Zasada nadrzędna obowiązująca od tej sesji:** Claude pyta o zgodę PRZED każdą zmianą — nawet w plikach notatek jak ten — i nigdy nie łączy opisu problemu z jego naprawą w jednej turze. Szczegóły: [[feedback_no_code_writing]] w pamięci Claude.
 
 ## Kim jest Norbert
 
@@ -141,6 +145,7 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
 - Norbert chce rozumieć DLACZEGO, nie tylko JAK
 - Plik `plan-lekcji.md` to nasza wspólna mapa postępów — aktualizować po każdej ukończonej lekcji
 - **Każda komenda terminala/systemowa, którą tłumaczę w rozmowie, ma też trafić do `podrecznik/` w odpowiednim rozdziale** — nie tylko zostać wytłumaczona ustnie i zapomniana. Dotyczy to też rzeczy spoza samej Javy (snap, apt, gsettings itp.), jeśli pojawiają się w trakcie sesji. Komendy Linuksa/terminala → `podrecznik/linux/`, konkretne narzędzia (Git, IntelliJ, Snap) → `podrecznik/narzedzia/`, Java → `podrecznik/java/`.
+- **Format komend w podręczniku (potwierdzone 2 lipca 2026, wieczór):** jedna komenda = własny blok ```bash, wyjaśnienie flag pod spodem jako lista wypunktowana. NIE upychać kilku komend w jednym bloku z komentarzami `# opis` na końcu linii — Norbert to ocenił jako mało czytelne (łamie się w wąskim panelu Obsidiana).
 - **PRZED każdym przejściem do nowego tematu — zrobić test z CAŁEJ dotychczasowej wiedzy, nie tylko ostatniej lekcji**
 - **Co godzinę (lub przy naturalnej przerwie) — krótki test powtórkowy z całości materiału**
 - Oceniać obiektywnie i rygorystycznie w skali 0-100, bez taryfy ulgowej
