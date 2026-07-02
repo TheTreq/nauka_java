@@ -1,4 +1,4 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
 # MAVEN
 
@@ -49,4 +49,4 @@ Strzałka pobierania idzie zawsze z góry na dół. Nigdy odwrotnie — JUnit ni
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)

@@ -1,4 +1,4 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
 # JAVA — podstawy składni
 
@@ -31,4 +31,4 @@ Metoda = blok kodu który coś robi. Jak funkcja w Blueprintach w Unreal.
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)

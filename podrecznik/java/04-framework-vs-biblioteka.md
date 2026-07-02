@@ -1,4 +1,4 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
 # FRAMEWORK vs BIBLIOTEKA vs JUNIT — kto kogo woła
 
@@ -47,4 +47,4 @@ Jedno narzędzie, dwa różne mechanizmy naraz, zależnie od tego której jego c
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)

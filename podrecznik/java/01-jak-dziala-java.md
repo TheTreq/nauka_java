@@ -1,4 +1,4 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
 # JAK DZIAŁA JAVA — przepływ
 
@@ -18,4 +18,4 @@ MAVEN zarządza tym wszystkim z góry:
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)

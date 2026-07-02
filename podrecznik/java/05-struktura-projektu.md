@@ -1,4 +1,4 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
 # STRUKTURA PROJEKTU
 
@@ -17,4 +17,4 @@ testy-api/
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)

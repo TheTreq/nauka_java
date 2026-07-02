@@ -1,6 +1,6 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
-# TERMINAL I GIT
+# GIT
 
 ## Skróty terminala które już znasz
 
@@ -24,4 +24,4 @@ push-progress     # alias = git add + commit + push w jednym
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)

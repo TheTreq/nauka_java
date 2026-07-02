@@ -1,4 +1,4 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
 # SYSTEM I NARZĘDZIA — Snap, APT, ustawienia
 
@@ -67,4 +67,4 @@ Własny skrót klawiszowy: Ustawienia → Skróty klawiszowe → Niestandardowe 
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)

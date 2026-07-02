@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postępy w nauce</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#F3F4F7;color:#1D2230;line-height:1.5}
+  a{text-decoration:none;color:inherit}
+
+  /* NAV */
+  nav{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid #EDEEF2;background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+  .logo{font-size:18px;font-weight:700;letter-spacing:-.3px}
+  .logo .a{color:#3B73D6}.logo .b{color:#1D2230}
+  .pill-nav{font-size:12px;font-weight:600;color:#2F9D6E;background:#E7F6EE;border-radius:20px;padding:5px 13px}
+
+  /* HERO */
+  .hero{padding:40px 22px 30px;max-width:680px;margin:0 auto}
+  .tag{display:inline-block;font-size:11px;font-weight:700;color:#3B73D6;background:#E8F0FE;border-radius:20px;padding:4px 12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  .hero h1{font-size:30px;font-weight:700;line-height:1.18;letter-spacing:-.5px;margin-bottom:10px}
+  .hero .sub{font-size:15px;color:#6B7280;margin-bottom:18px;line-height:1.6}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px}
+  .hero-meta span{font-size:13px;color:#6B7280;background:#fff;border:1px solid #EDEEF2;border-radius:10px;padding:6px 12px}
+
+  /* STATS */
+  .stats-wrap{max-width:680px;margin:0 auto;padding:0 22px 28px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+  .stat{background:#fff;border:1px solid #EDEEF2;border-radius:14px;padding:18px 16px;text-align:center}
+  .stat .val{font-size:30px;font-weight:700;letter-spacing:-.5px;line-height:1}
+  .stat .label{font-size:12px;color:#6B7280;margin-top:6px;font-weight:500}
+  .val.green{color:#2F9D6E}
+  .val.blue{color:#3B73D6}
+  .val.orange{color:#D97706}
+
+  /* PROGRESS BAR */
+  .progress-wrap{max-width:680px;margin:0 auto;padding:0 22px 28px}
+  .prog-card{background:#fff;border:1px solid #EDEEF2;border-radius:14px;padding:20px}
+  .prog-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .prog-title{font-size:14px;font-weight:600}
+  .prog-pct{font-size:14px;font-weight:700;color:#3B73D6}
+  .bar-bg{height:10px;background:#F3F4F7;border-radius:99px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#3B73D6,#6096E8);transition:width .6s ease}
+
+  /* SECTIONS */
+  .section{max-width:680px;margin:0 auto;padding:0 22px 36px}
+  .sect-title{font-size:20px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .sect-badge{font-size:12px;font-weight:600;color:#6B7280;background:#F3F4F7;border:1px solid #EDEEF2;border-radius:20px;padding:3px 10px}
+
+  /* QUIZ CARDS */
+  .quiz-card{background:#fff;border:1px solid #EDEEF2;border-radius:14px;padding:20px;margin-bottom:12px;display:flex;gap:18px;align-items:flex-start}
+  .score-circle{min-width:60px;height:60px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:18px;font-weight:700;line-height:1}
+  .score-circle .pts{font-size:11px;font-weight:500;margin-top:2px}
+  .circle-green{background:#E7F6EE;color:#2F9D6E}
+  .circle-orange{background:#FEF3C7;color:#D97706}
+  .circle-red{background:#FDECEA;color:#B3261E}
+  .quiz-info{flex:1;min-width:0}
+  .quiz-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+  .quiz-num{font-size:15px;font-weight:700}
+  .quiz-date{font-size:12px;color:#6B7280}
+  .badge{font-size:11px;font-weight:700;border-radius:6px;padding:3px 8px}
+  .badge-pass{background:#E7F6EE;color:#2F9D6E}
+  .badge-fail{background:#FDECEA;color:#B3261E}
+  .quiz-material{font-size:13px;color:#6B7280;margin-bottom:10px;line-height:1.5}
+  .errors{display:flex;flex-wrap:wrap;gap:6px}
+  .err-tag{font-size:12px;background:#FEF3C7;color:#92400E;border-radius:8px;padding:3px 9px}
+
+  /* TREND CHART */
+  .chart-wrap{background:#fff;border:1px solid #EDEEF2;border-radius:14px;padding:20px;margin-bottom:28px}
+  .chart-title{font-size:14px;font-weight:600;margin-bottom:16px;color:#1D2230}
+  .chart-svg{width:100%;overflow:visible}
+  .chart-line{stroke:#3B73D6;stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round}
+  .chart-area{fill:url(#grad);opacity:.5}
+  .chart-dot{fill:#3B73D6;r:5}
+  .chart-dot-pass{fill:#2F9D6E}
+  .chart-threshold{stroke:#2F9D6E;stroke-width:1.5;stroke-dasharray:4,4;fill:none}
+  .chart-label{font-size:11px;fill:#9AA1AD;font-family:-apple-system,sans-serif}
+  .chart-score{font-size:12px;font-weight:700;font-family:-apple-system,sans-serif}
+
+  /* LESSONS */
+  .modul-group{margin-bottom:20px}
+  .modul-name{font-size:12px;font-weight:700;color:#9AA1AD;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .lesson{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:1px solid #EDEEF2;border-radius:10px;margin-bottom:6px}
+  .lesson-ico{font-size:16px;min-width:24px;text-align:center}
+  .lesson-title{font-size:14px;font-weight:500;flex:1}
+  .lesson-badge{font-size:11px;font-weight:600;border-radius:6px;padding:2px 8px}
+  .lb-done{background:#E7F6EE;color:#2F9D6E}
+  .lb-active{background:#E8F0FE;color:#3B73D6}
+  .lb-wait{background:#F3F4F7;color:#9AA1AD}
+
+  /* FOOTER */
+  footer{text-align:center;padding:28px 22px;font-size:12px;color:#9AA1AD;border-top:1px solid #EDEEF2;margin-top:12px}
+
+  @media(max-width:480px){
+    .hero h1{font-size:24px}
+    .quiz-card{flex-direction:column;gap:12px}
+    .score-circle{width:48px;height:48px;font-size:15px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span class="a">Nauka</span><span class="b">Progress</span></div>
+  <div class="pill-nav" id="nav-pill">ładuję...</div>
+</nav>
+
+<div class="hero">
+  <div class="tag" id="hero-tag">ŁADUJĘ</div>
+  <h1 id="hero-h1">...</h1>
+  <p class="sub" id="hero-sub">...</p>
+  <div class="hero-meta" id="hero-meta"></div>
+</div>
+
+<div class="stats-wrap">
+  <div class="stats" id="stats-grid"></div>
+</div>
+
+<div class="progress-wrap">
+  <div class="prog-card">
+    <div class="prog-header">
+      <div class="prog-title" id="prog-title">Postęp kursu</div>
+      <div class="prog-pct" id="prog-pct">0%</div>
+    </div>
+    <div class="bar-bg"><div class="bar-fill" id="bar-fill" style="width:0%"></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sect-title">Sprawdziany <span class="sect-badge" id="quiz-badge">0</span></div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Trend wyników</div>
+    <svg class="chart-svg" id="chart-svg" height="120" viewBox="0 0 560 120">
+      <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3B73D6" stop-opacity=".25"/>
+          <stop offset="100%" stop-color="#3B73D6" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div id="quiz-list"></div>
+</div>
+
+<div class="section">
+  <div class="sect-title">Lekcje <span class="sect-badge" id="lesson-badge">0</span></div>
+  <div id="lesson-list"></div>
+</div>
+
+<footer id="footer">zaktualizowano: —</footer>
+
+<script>
+// =============================================
+// DANE — aktualizuj tę sekcję po każdym sprawdzianie / lekcji
+// =============================================
+const DATA = {
+  uczen: {
+    imie: "Norbert",
+    temat: "Java — Testy Automatyczne",
+    cel: "Junior Automation Tester",
+    start: "2026-06-01",
+    zaktualizowano: "2026-07-01"
+  },
+  sprawdziany: [
+    {
+      id: 1,
+      data: "przed 2026-07-01",
+      wynik: 58,
+      prog: 90,
+      material: "Terminal (pwd, cd, ls), Git (add/commit/push, .gitignore), Java (JVM, kompilator)",
+      bledy: ["JVM — nie wiedział czym jest", ".gitignore — zapomniane", "Nawigacja: cd ~/nauka_java"]
+    },
+    {
+      id: 2,
+      data: "przed 2026-07-01",
+      wynik: 76,
+      prog: 90,
+      material: "Jak wyżej (powtórka po wyjaśnieniach)",
+      bledy: ["Część pytań o JVM nadal niejasna", "Drobne błędy w Git"]
+    },
+    {
+      id: 3,
+      data: "2026-07-01",
+      wynik: 55,
+      prog: 90,
+      material: "Lekcje 1–3: teoria, środowisko, Git/GitHub, JUnit podstawy",
+      bledy: ["Maven — nie wiedział czym jest", "src/main vs src/test — nieznane", "void — mylony z deklaracją zmiennej"]
+    },
+    {
+      id: 4,
+      data: "2026-07-01",
+      wynik: 97,
+      prog: 90,
+      material: "Jak wyżej (powtórka po wyjaśnieniach)",
+      bledy: ["JVM — powiedział 'kod' zamiast 'bytecode' (drobnostka)"]
+    }
+  ],
+  lekcje: [
+    { modul: "Moduł 1 — Podstawy Javy i środowisko", tytul: "Teoria — Java, JDK, JVM, Maven, JUnit, framework, test API", status: "ukonczona" },
+    { modul: "Moduł 1 — Podstawy Javy i środowisko", tytul: "Środowisko — JDK 21, IntelliJ IDEA, Git, Claude Desktop", status: "ukonczona" },
+    { modul: "Moduł 1 — Podstawy Javy i środowisko", tytul: "Git i GitHub — konfiguracja, repo nauka_java, push", status: "ukonczona" },
+    { modul: "Moduł 1 — Podstawy Javy i środowisko", tytul: "Pierwszy test JUnit — @Test, import, void, pom.xml", status: "w_toku" },
+    { modul: "Moduł 1 — Podstawy Javy i środowisko", tytul: "assertEquals, assertTrue, świadomie nieudany test, mvn test", status: "oczekuje" },
+    { modul: "Moduł 2 — Asercje i struktura testów", tytul: "Asercje JUnit — assertEquals, assertTrue, assertNotNull", status: "oczekuje" },
+    { modul: "Moduł 2 — Asercje i struktura testów", tytul: "Cykl życia testu — @BeforeEach, @AfterEach", status: "oczekuje" },
+    { modul: "Moduł 2 — Asercje i struktura testów", tytul: "Testy parametryczne — @ParameterizedTest", status: "oczekuje" },
+    { modul: "Moduł 3 — Java dla testera", tytul: "Zmienne, typy, operatory — int, String, boolean", status: "oczekuje" },
+    { modul: "Moduł 3 — Java dla testera", tytul: "Warunki i pętle — if, for, while", status: "oczekuje" },
+    { modul: "Moduł 3 — Java dla testera", tytul: "Metody — parametry, wartość zwracana, void", status: "oczekuje" },
+    { modul: "Moduł 3 — Java dla testera", tytul: "Klasy i obiekty — konstruktor, pola, metody instancji", status: "oczekuje" },
+    { modul: "Moduł 4 — REST API i HTTP", tytul: "Czym jest REST API — request, response, status codes", status: "oczekuje" },
+    { modul: "Moduł 4 — REST API i HTTP", tytul: "HTTP w praktyce — GET, POST, nagłówki, body, JSON", status: "oczekuje" },
+    { modul: "Moduł 4 — REST API i HTTP", tytul: "RestAssured — pierwsza biblioteka do testów API", status: "oczekuje" },
+    { modul: "Moduł 4 — REST API i HTTP", tytul: "Testy GET — given/when/then, statusCode, body", status: "oczekuje" },
+    { modul: "Moduł 4 — REST API i HTTP", tytul: "Testy POST — tworzenie zasobów, weryfikacja odpowiedzi", status: "oczekuje" },
+    { modul: "Moduł 5 — JSON i deserializacja", tytul: "JSON — struktura, pola, zagnieżdżenie, tablice", status: "oczekuje" },
+    { modul: "Moduł 5 — JSON i deserializacja", tytul: "Jackson — ObjectMapper, POJO, deserializacja", status: "oczekuje" },
+    { modul: "Moduł 5 — JSON i deserializacja", tytul: "Modelowanie odpowiedzi API jako klasy Java", status: "oczekuje" },
+    { modul: "Moduł 6 — Bazy danych", tytul: "PostgreSQL — tabele, SELECT, INSERT, relacje", status: "oczekuje" },
+    { modul: "Moduł 6 — Bazy danych", tytul: "JDBC — połączenie z bazą danych z Javy", status: "oczekuje" },
+    { modul: "Moduł 6 — Bazy danych", tytul: "Zapis wyników testów do bazy danych", status: "oczekuje" },
+    { modul: "Moduł 7 — Organizacja testów", tytul: "Page Object Model — wzorzec organizacji testów", status: "oczekuje" },
+    { modul: "Moduł 7 — Organizacja testów", tytul: "Konfiguracja środowisk — dev, staging, prod", status: "oczekuje" },
+    { modul: "Moduł 7 — Organizacja testów", tytul: "Raporty testów — Allure lub Surefire", status: "oczekuje" },
+    { modul: "Moduł 8 — Spring Boot i projekt końcowy", tytul: "Spring Boot — czym jest, jak startuje aplikacja", status: "oczekuje" },
+    { modul: "Moduł 8 — Spring Boot i projekt końcowy", tytul: "Testowanie Spring Boot — MockMvc, WebMvcTest", status: "oczekuje" },
+    { modul: "Moduł 8 — Spring Boot i projekt końcowy", tytul: "Projekt końcowy — testy publicznego API + PostgreSQL", status: "oczekuje" }
+  ]
+};
+// =============================================
+// KONIEC DANYCH
+// =============================================
+
+function daysSince(dateStr) {
+  const d = new Date(dateStr);
+  const now = new Date();
+  return Math.floor((now - d) / 86400000);
+}
+
+function scoreClass(wynik, prog) {
+  if (wynik >= prog) return 'circle-green';
+  if (wynik >= 70) return 'circle-orange';
+  return 'circle-red';
+}
+
+function render() {
+  const { uczen, sprawdziany, lekcje } = DATA;
+
+  // NAV
+  document.getElementById('nav-pill').textContent = uczen.imie + ' • ' + uczen.temat.split('—')[0].trim();
+
+  // HERO
+  document.getElementById('hero-tag').textContent = uczen.cel.toUpperCase();
+  document.getElementById('hero-h1').textContent = uczen.temat;
+  document.getElementById('hero-sub').textContent =
+    'Śledź postępy ' + uczen.imie + 'a w nauce od samego początku — każdy sprawdzian, każda lekcja.';
+  document.getElementById('hero-meta').innerHTML =
+    '<span>📅 Nauka od ' + uczen.start + '</span>' +
+    '<span>⏱ ' + daysSince(uczen.start) + ' dni nauki</span>' +
+    '<span>🎯 ' + uczen.cel + '</span>';
+
+  // STATS
+  const zdane = sprawdziany.filter(s => s.wynik >= s.prog).length;
+  const najlepszy = Math.max(...sprawdziany.map(s => s.wynik));
+  const lekcjeUkonczone = lekcje.filter(l => l.status === 'ukonczona').length;
+  const lekWToku = lekcje.filter(l => l.status === 'w_toku').length;
+
+  const statsEl = document.getElementById('stats-grid');
+  statsEl.innerHTML = `
+    <div class="stat"><div class="val ${zdane > 0 ? 'green' : 'orange'}">${zdane}/${sprawdziany.length}</div><div class="label">sprawdzianów zdanych</div></div>
+    <div class="stat"><div class="val blue">${najlepszy}<span style="font-size:16px;font-weight:500">/100</span></div><div class="label">najlepszy wynik</div></div>
+    <div class="stat"><div class="val blue">${lekcjeUkonczone}</div><div class="label">lekcji ukończonych</div></div>
+    <div class="stat"><div class="val orange">${lekcje.length - lekcjeUkonczone}</div><div class="label">lekcji pozostało</div></div>
+  `;
+
+  // PROGRESS BAR
+  const pct = Math.round((lekcjeUkonczone / lekcje.length) * 100);
+  const aktualnaLekcja = lekcje.find(l => l.status === 'w_toku') || lekcje.find(l => l.status === 'oczekuje');
+  document.getElementById('prog-title').textContent = 'Postęp kursu' + (aktualnaLekcja ? ' • teraz: ' + aktualnaLekcja.tytul : '');
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('bar-fill').style.width = pct + '%';
+
+  // CHART
+  renderChart(sprawdziany);
+
+  // QUIZ BADGE
+  document.getElementById('quiz-badge').textContent = sprawdziany.length + ' podejść';
+
+  // QUIZ CARDS
+  const qList = document.getElementById('quiz-list');
+  qList.innerHTML = sprawdziany.slice().reverse().map(s => {
+    const passed = s.wynik >= s.prog;
+    const cc = scoreClass(s.wynik, s.prog);
+    return `
+      <div class="quiz-card">
+        <div class="score-circle ${cc}">
+          <div>${s.wynik}</div>
+          <div class="pts">/100</div>
+        </div>
+        <div class="quiz-info">
+          <div class="quiz-header">
+            <div class="quiz-num">Sprawdzian #${s.id}</div>
+            <div class="quiz-date">${s.data}</div>
+            <div class="badge ${passed ? 'badge-pass' : 'badge-fail'}">${passed ? '✓ ZALICZONY' : '✗ NIEZALICZONY'}</div>
+          </div>
+          <div class="quiz-material">${s.material}</div>
+          ${s.bledy.length ? `<div class="errors">${s.bledy.map(b => `<span class="err-tag">${b}</span>`).join('')}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  // LESSONS
+  document.getElementById('lesson-badge').textContent = lekcjeUkonczone + '/' + lekcje.length;
+  const groups = {};
+  lekcje.forEach(l => {
+    if (!groups[l.modul]) groups[l.modul] = [];
+    groups[l.modul].push(l);
+  });
+
+  const lList = document.getElementById('lesson-list');
+  lList.innerHTML = Object.entries(groups).map(([modul, items]) => `
+    <div class="modul-group">
+      <div class="modul-name">${modul}</div>
+      ${items.map(l => {
+        const ico = l.status === 'ukonczona' ? '✅' : l.status === 'w_toku' ? '🔵' : '○';
+        const badge = l.status === 'ukonczona'
+          ? '<span class="lesson-badge lb-done">ukończona</span>'
+          : l.status === 'w_toku'
+          ? '<span class="lesson-badge lb-active">w toku</span>'
+          : '<span class="lesson-badge lb-wait">oczekuje</span>';
+        return `<div class="lesson"><div class="lesson-ico">${ico}</div><div class="lesson-title">${l.tytul}</div>${badge}</div>`;
+      }).join('')}
+    </div>
+  `).join('');
+
+  // FOOTER
+  document.getElementById('footer').textContent = 'zaktualizowano: ' + uczen.zaktualizowano + ' · próg zaliczenia: 90/100';
+}
+
+function renderChart(sprawdziany) {
+  if (sprawdziany.length < 2) return;
+  const svg = document.getElementById('chart-svg');
+  const W = 560, H = 120, PAD = { t: 20, r: 20, b: 30, l: 36 };
+  const iW = W - PAD.l - PAD.r;
+  const iH = H - PAD.t - PAD.b;
+  const minV = 0, maxV = 100;
+
+  function x(i) { return PAD.l + (i / (sprawdziany.length - 1)) * iW; }
+  function y(v) { return PAD.t + (1 - (v - minV) / (maxV - minV)) * iH; }
+
+  // threshold line
+  const prog = sprawdziany[0].prog;
+  const ty = y(prog);
+  let out = `<line x1="${PAD.l}" y1="${ty}" x2="${W - PAD.r}" y2="${ty}" class="chart-threshold"/>`;
+  out += `<text x="${W - PAD.r + 3}" y="${ty + 4}" class="chart-label" font-size="10" fill="#2F9D6E">${prog}</text>`;
+
+  // area
+  const pts = sprawdziany.map((s, i) => `${x(i)},${y(s.wynik)}`).join(' ');
+  const areaPath = `M ${x(0)},${H - PAD.b} L ${sprawdziany.map((s,i) => `${x(i)},${y(s.wynik)}`).join(' L ')} L ${x(sprawdziany.length-1)},${H - PAD.b} Z`;
+  out += `<path d="${areaPath}" class="chart-area"/>`;
+
+  // line
+  const linePath = `M ${sprawdziany.map((s,i) => `${x(i)},${y(s.wynik)}`).join(' L ')}`;
+  out += `<path d="${linePath}" class="chart-line"/>`;
+
+  // dots and labels
+  sprawdziany.forEach((s, i) => {
+    const cx = x(i), cy = y(s.wynik);
+    const passed = s.wynik >= s.prog;
+    out += `<circle cx="${cx}" cy="${cy}" r="5" fill="${passed ? '#2F9D6E' : '#3B73D6'}" stroke="#fff" stroke-width="2"/>`;
+    out += `<text x="${cx}" y="${cy - 10}" text-anchor="middle" class="chart-score" fill="${passed ? '#2F9D6E' : '#1D2230'}">${s.wynik}</text>`;
+    out += `<text x="${cx}" y="${H - PAD.b + 14}" text-anchor="middle" class="chart-label">#${s.id}</text>`;
+  });
+
+  // y-axis labels
+  [0, 25, 50, 75, 100].forEach(v => {
+    out += `<text x="${PAD.l - 6}" y="${y(v) + 4}" text-anchor="end" class="chart-label">${v}</text>`;
+    if (v > 0 && v < 100) out += `<line x1="${PAD.l}" y1="${y(v)}" x2="${W - PAD.r}" y2="${y(v)}" stroke="#EDEEF2" stroke-width="1"/>`;
+  });
+
+  svg.innerHTML = `<defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3B73D6" stop-opacity=".25"/><stop offset="100%" stop-color="#3B73D6" stop-opacity="0"/></linearGradient></defs>` + out;
+}
+
+render();
+</script>
+</body>
+</html>

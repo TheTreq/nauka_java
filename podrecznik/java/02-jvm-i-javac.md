@@ -1,4 +1,4 @@
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
 
 # JVM I JAVAC — silnik i kompilator
 
@@ -16,4 +16,4 @@ Uruchamiasz raz — potem JVM może odpalać .class wszędzie.
 
 ---
 
-[← powrót do spisu treści](00-Index.md)
+[← powrót do spisu treści](../00-Index.md)
