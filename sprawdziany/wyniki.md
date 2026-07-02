@@ -57,6 +57,54 @@ Postęp: +42 punkty względem sprawdzianu #3
 
 ---
 
+## Sprawdzian #5 — 2 lipca 2026
+
+**Materiał:** Lekcje 1-3 w całości (teoria, środowisko, Git, JUnit/assertEquals/mvn test)
+
+**Wynik: 60/100** ❌
+
+Co nie wyszło:
+- JVM — nazwa i funkcja błędne (pomylone ze "środowiskiem do pisania testów")
+- Plugin vs dependency — brak odpowiedzi (temat niedostatecznie wytłumaczony w sesji, do powtórzenia porządnie)
+- src/main vs src/test dla klas pomocniczych (np. PostApiClient) — błędna odpowiedź (materiał z przyszłej Lekcji 18, przedwczesne pytanie)
+- Składnia komend Git (`git . add` zamiast `git add .`, brak `-m` przy commit)
+- Framework vs biblioteka — biblioteka opisana błędnie jako "obudowanie frameworku"
+
+Co wyszło dobrze (100%):
+- Mechanizm przerywania wykonania metody przez wyjątek (kod po nieudanej asercji się nie wykonuje)
+- `mvn test`
+- Skutek braku `@Test`
+
+**Uwaga:** sesja mocno zdominowana przez ok. 90-minutową przerwę na naprawę klawiatury (tylda/keyd) — mogło to wpłynąć na skupienie przy nauce.
+
+---
+
+## Sprawdzian #6 — 2 lipca 2026
+
+**Materiał:** Lekcje 1-3 w całości (zakres poprawiony po sprawdzianie #5 — bez pytań spoza `plan-lekcji.md`)
+
+**Wynik: 59/100** ❌
+
+Co nie wyszło:
+- Framework vs biblioteka — sama etykieta ("szkielet") bez zrozumienia mechanizmu kto kogo woła
+- Komendy Git (config/add/commit/push) — całkowita blokada, ten sam problem co w sprawdzianie #5
+- Elementy dependency w `pom.xml` (groupId/artifactId/version) — zapomniane całkowicie
+- Czym jest test API — mylone z ogólnym testowaniem manualnym gotowej aplikacji
+- JVM — mechanizm opisany poprawnie, ale bez słowa "bytecode" (ten sam błąd co w sprawdzianie #4)
+- `@Test` — koncepcja poprawna, nazwane "komendą" zamiast adnotacją
+- Kolejność `mvn test` — podana niepewnie razem z błędnym wariantem "test mvn"
+
+Co wyszło dobrze:
+- Manualny vs automatyczny — definicja poprawna (bez części "kiedy się opłaca")
+- Maven — "menadżer do wszystkiego"
+- `src/main` vs `src/test`
+- `.gitignore`
+- Analiza kodu: przerwanie metody przez nieudany `assertEquals` — pełne zrozumienie
+
+**Uwaga:** ten sam dzień co sprawdzian #5, po dużej dawce nowych korekt — realistycznie kolejna powtórka, nie skok od razu do 90+.
+
+---
+
 ## Podsumowanie
 
 | # | Data | Wynik | Status |
@@ -65,5 +113,7 @@ Postęp: +42 punkty względem sprawdzianu #3
 | 2 | poprzednia sesja | 76/100 | ❌ |
 | 3 | 1 lipca 2026 | 55/100 | ❌ |
 | 4 | 1 lipca 2026 | 97/100 | ✅ |
+| 5 | 2 lipca 2026 | 60/100 | ❌ |
+| 6 | 2 lipca 2026 | 59/100 | ❌ |
 
-**Trend:** rośnie ⬆️ — ale dopiero sprawdzian #4 przekroczył próg 90.
+**Trend:** niejednolity — sprawdzian #4 przekroczył próg 90, #5 i #6 poniżej. Słabe punkty się powtarzają (Git, framework/biblioteka) — potrzebują dedykowanej powtórki, nie tylko ponownego tłumaczenia. Sprawdzian #7 zaplanowany przed Lekcją 4.

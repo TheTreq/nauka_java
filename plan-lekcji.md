@@ -38,7 +38,7 @@
 
 ## Moduł 2 — Podstawy Javy dla testerów
 
-### Lekcja 3. Pierwszy test w JUnit
+### Lekcja 3. Pierwszy test w JUnit ✅
 
 - czym jest test automatyczny
 - dodanie JUnit 5 do projektu
