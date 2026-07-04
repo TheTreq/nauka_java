@@ -28,10 +28,24 @@ Mówi Mavenowi: czego potrzebuje projekt, jaka wersja Javy, jakie biblioteki pob
     <scope>test</scope>
 </dependency>
 ```
-- `groupId` = kto to zrobił (np. org.junit.jupiter)
-- `artifactId` = nazwa biblioteki (np. junit-jupiter)
-- `version` = która wersja
+- `groupId` = kto to zrobił, wydawca (np. org.junit.jupiter) — jak nazwa studia wydającego grę na Steam
+- `artifactId` = nazwa biblioteki, konkretny produkt (np. junit-jupiter) — jak tytuł gry
+- `version` = która wersja — jak numer wydania/patcha gry
 - `scope>test` = dostępne tylko podczas testów, nie trafia do produkcji
+
+## Plugin w pom.xml — narzędzie DLA Mavena, nie DLA Twojego kodu
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.2.5</version>
+</plugin>
+```
+- Plugin też jest pobierany przez Mavena, tym samym mechanizmem co dependency — różnica to nie "czy jest pobierany", tylko **kto go używa**.
+- Dependency = biblioteka DLA TWOJEGO KODU — widać ją w `import` (np. `import org.junit.jupiter.api.Test;`).
+- Plugin = narzędzie, którego używa **Maven**, żeby coś zrobić z Twoim projektem (skompilować, przetestować, spakować) — nigdy nie pojawia się w żadnym `import`, bo Twój kod się do niego nie odwołuje.
+- Przykład z życia: `maven-surefire-plugin` to narzędzie, które Maven odpala w tle podczas `mvn test` — szuka metod z `@Test` w Twoich skompilowanych klasach i je uruchamia. Bez jawnie podanej wersji 3.2.5 domyślna (stara) wersja nie rozpoznawała JUnit 5, stąd efekt "Tests run: 0" mimo BUILD SUCCESS.
+- Dowód: plugin nie pojawia się w panelu "External Libraries" w IntelliJ (tam widać tylko dependency, czyli to, do czego Twój kod ma dostęp) — bo Twój kod nigdy go nie potrzebuje.
 
 ## Hierarchia — co skąd się bierze
 

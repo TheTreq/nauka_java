@@ -1,10 +1,12 @@
 # Pamięć o Norbercie i naszej współpracy
 
-> ⚡ **Zacznij tutaj (stan na koniec sesji 2 lipca 2026, wieczór):** Obsidian i podręcznik pojęć **w pełni ogarnięte i zamknięte jako temat** — sejf `~/nauka_java/podrecznik/` (dawniej `sciagawka/`), podzielony na `java/`, `linux/`, `narzedzia/`, otwiera się i renderuje poprawnie. Po drodze przećwiczone na żywo w terminalu: `git status`, `git add` (z wariantami `.`/`-u`/`-A`), `git commit -m` (w tym realny błąd `switch 'm' wymaga wartości` i jego naprawa), `git push`, `git mv` — Norbert samodzielnie zrobił pełny cykl add→commit→push, dwukrotnie, bez pomocy. **Drobny luźny koniec:** pusty plik `podrecznik/Bez nazwy.md` (przypadkowo stworzony przez Obsidiana) nadal czeka na decyzję czy go usunąć — zapytać na starcie.
+> ⚡ **Zacznij tutaj (stan na koniec sesji 3 lipca 2026):** Egzamin #7 — pierwsze podejście 82/100 ❌, po ukierunkowanej powtórce 4 słabych punktów i retescie **skorygowany do 92/100 ✅**. Próg 90 przekroczony, **Lekcja 4 odblokowana i rozpoczęta**. Szczegóły korekty w `sprawdziany/wyniki.md`.
 >
-> **Najważniejsze na start nowej sesji:** kontynuować **Priorytet 1** niżej — pełna powtórka słabych punktów ze Sprawdzianów #5/#6 (Git koncepcyjnie już przećwiczony w terminalu, ale framework vs biblioteka / pom.xml / bytecode / adnotacja / test API jeszcze nie odhaczone w tej sesji). **ŻADNEGO Egzaminu #7, dopóki ta lista nie jest przerobiona w całości — to twardy warunek od Norberta, patrz [[feedback_teaching_style]] w pamięci Claude.**
+> **Najważniejsze na start nowej sesji:** kontynuować **Lekcję 4** (zmienne, typy danych String/int/boolean/double, proste operacje, wypisywanie w konsoli) — patrz `plan-lekcji.md`.
 >
-> **Zasada nadrzędna obowiązująca od tej sesji:** Claude pyta o zgodę PRZED każdą zmianą — nawet w plikach notatek jak ten — i nigdy nie łączy opisu problemu z jego naprawą w jednej turze. Szczegóły: [[feedback_no_code_writing]] w pamięci Claude.
+> **Nowa zasada formatu egzaminów (3 lipca 2026):** jeśli wynik jest powyżej ~75/100, kolejne podejście po powtórce NIE musi być pełnym nowym egzaminem — wystarczy krótki retest tylko słabych punktów, a Claude sam ocenia czy to wystarcza żeby uznać poprzedni egzamin za skorygowany. Poniżej ~75/100 — pełna powtórka i pełny nowy egzamin jak dotychczas. Patrz [[feedback_teaching_style]] w pamięci Claude.
+>
+> **Zasada nadrzędna nadal obowiązuje:** Claude pyta o zgodę PRZED każdą zmianą w `_pamiec.md`, `plan-lekcji.md` i kodzie, i nigdy nie łączy opisu problemu z jego naprawą w jednej turze. **Wyjątek: folder `podrecznik/` jest z tego zwolniony** — Claude uzupełnia go na bieżąco, samodzielnie, bez pytania o zgodę. Szczegóły: [[feedback_no_code_writing]] w pamięci Claude.
 
 ## Kim jest Norbert
 
@@ -59,6 +61,17 @@
 - **Przebudowa struktury podręcznika (2 lipca 2026, wieczór):** Norbert uczy się naraz kilku rzeczy (Java, Linux, Git, narzędzia) i płaska lista rozdziałów przestała się skalować. Nowa struktura z podfolderami: `podrecznik/java/` (6 rozdziałów), `podrecznik/linux/` (nawigacja terminalowa: pwd/ls/cd), `podrecznik/narzedzia/` (Git, system/pakiety — będzie się rozrastać o kolejne narzędzia jak IntelliJ). Cały folder `sciagawka/` przemianowany na `podrecznik/` na wyraźną prośbę Norberta ("to wszystko ma się nazywać podręcznik"). `00-Index.md` zaktualizowany pod nową strukturę.
 - **Norbert wprowadził twardą zasadę współpracy tego wieczoru: Claude musi pytać o zgodę PRZED każdą zmianą, nawet w plikach notatek/dokumentacji (nie tylko w kodzie), i nie może łączyć opisu problemu z jego naprawą w jednej turze.** Zapisane szczegółowo w pamięci Claude jako [[feedback_no_code_writing]] — to zasada nadrzędna, obowiązuje też w kolejnych sesjach.
 
+## Sesja 3 lipca 2026 — pełna powtórka Priorytetu 1 i Egzamin #7
+
+- Usunięty pusty plik `podrecznik/Bez nazwy.md` (przypadkowo stworzony przez Obsidiana).
+- Przerobiona w całości 7-punktowa lista powtórkowa ze Sprawdzianów #5/#6: JVM/bytecode, plugin vs dependency, framework vs biblioteka, elementy `pom.xml`, adnotacja `@Test` vs komenda, test API, komendy Gita — wszystkie solidnie omówione hands-on (własny `pom.xml`, własny `PierwszyTest.java`, panel External Libraries w IntelliJ).
+- **Nowa zasada terminologii:** dla testu "kto kogo woła" (framework vs biblioteka) używać słowa **"wywołuje"**, nie "woła" — brzmi mniej antropomorficznie i to i tak poprawniejszy technicznie termin. Poprawione w `podrecznik/java/04-framework-vs-biblioteka.md` i tytule w `00-Index.md`.
+- Sprawdzona i **odrzucona jako niespójna** analogia od Przemka: "silnik samochodu = framework, pedał gazu = biblioteka" — nie przechodzi testu "kto kogo wywołuje" (to Norbert decyduje kiedy naciska pedał, więc to zachowanie biblioteki po obu stronach). Norbert sam to wykazał — dobry dowód samodzielnego stosowania testu, nie tylko powtarzania etykiet.
+- Nowy rozdział podręcznika: `podrecznik/java/07-test-api.md` (test API vs test manualny, analogia restauracji), dodany do `00-Index.md`.
+- Rozbudowane sekcje: `03-maven.md` (plugin w pom.xml + analogia Steam dla groupId/artifactId/version), `06-skladnia.md` (static import, adnotacja vs komenda).
+- **Ustalona nowa zasada współpracy:** folder `podrecznik/` jest zwolniony z reguły "pytaj przed każdą zmianą" — Claude uzupełnia go na bieżąco, samodzielnie. Reguła "pytaj przed zmianą" nadal obowiązuje dla `_pamiec.md`, `plan-lekcji.md` i kodu. Zapisane w pamięci Claude jako rozszerzenie [[feedback_no_code_writing]].
+- **Egzamin #7 (pierwszy pod nową nazwą)** — wynik 82/100 ❌ (próg 90). Duży postęp względem Sprawdzianów #5/#6 (60, 59), ale nie zaliczony. Pełne szczegóły w `sprawdziany/wyniki.md`. Największa dziura: framework vs biblioteka zastosowane konkretnie do JUnita (`@Test` błędnie nazwane zachowaniem biblioteki). Inne słabsze punkty: relacja JDK↔JVM (nieznana), trzecia funkcja Mavena (uruchamianie testów, pominięta), kontrast adnotacja/komenda (dobra treść, brak wprost porównania biernej etykiety z akcją).
+
 ## Dodatkowe rzeczy zrobione w tej sesji (poza planem lekcji)
 
 - Stworzono sciagawka.md — słownik pojęć z głupimi skojarzeniami (JVM="Jezu Włącz Mi", MVN="Menedżer Wszystkiego Nie?")
@@ -110,15 +123,13 @@ Po sprawdzianie #6 (59/100) zrobiliśmy długą, powolną sesję "jeden temat na
 
 ## Co robimy następnie
 
-**Priorytet 1 — pełna powtórka PRZED Egzaminem #7 (nazwa "sprawdzian" zmieniona na "egzamin" — patrz niżej), WYMAGANY przed Lekcją 4:**
-- Sprawdzian #5 (60/100) i #6 (59/100) oba nieudane — zakres Lekcje 1-3, bez pytań spoza `plan-lekcji.md`
-- **Norbert wyraźnie zastrzegł 2 lipca 2026 (wieczór): żadnego formalnego egzaminu, dopóki nie przejdziemy i nie powtórzymy WSZYSTKIEGO czego nie wiedział w Sprawdzianach #5 i #6.** To jest twardy warunek, nie sugestia — patrz [[feedback_teaching_style]] w pamięci Claude.
-- Lista do przerobienia pojedynczo (jedna po drugiej, na żywo w terminalu gdzie się da): Git (add/commit/push) — realna praktyka wpisywania komend w terminalu, framework vs biblioteka (już raz rozwiązane 2 lipca, tylko zweryfikować że utrwalone), elementy dependency w pom.xml (groupId/artifactId/version), słowo "bytecode" dla JVM, "adnotacja" (nie "komenda") dla @Test, czym jest test API
-- Dopiero PO pełnej powtórce — Egzamin #7, próg 90/100 żeby przejść dalej, bez wyjątków
+**Priorytet 1 (pierwotny) — ✅ UKOŃCZONY 3 lipca 2026:** pełna powtórka 7 punktów ze Sprawdzianów #5/#6 zrobiona w całości (JVM/bytecode, plugin vs dependency, framework vs biblioteka, elementy pom.xml, adnotacja @Test, test API, Git) — patrz "Sesja 3 lipca 2026" wyżej.
+
+**Priorytet 1 (nowy) — ✅ UKOŃCZONY 3 lipca 2026:** dogłębna powtórka 4 słabych punktów z Egzaminu #7 zrobiona (framework/biblioteka w JUnicie, JDK↔JVM, 3. funkcja Mavena, adnotacja/komenda). Zamiast pełnego Egzaminu #8 — ukierunkowany retest tych 4 punktów (nowa zasada, patrz banner wyżej), wynik Egzaminu #7 skorygowany do **92/100 ✅**. Pełne szczegóły w `sprawdziany/wyniki.md`.
 
 **Nazewnictwo (od 2 lipca 2026, wieczór):** formalny, punktowany test milowy = **"Egzamin"** (nie "sprawdzian" — to słowo zarezerwowane teraz na swobodne, niepunktowane sprawdzanie czegoś w trakcie ćwiczeń, np. output terminala). Historyczne wpisy "Sprawdzian #1-6" w `sprawdziany/wyniki.md` zostają bez zmian, od kolejnego wpisu używać "Egzamin #7".
 
-**Priorytet 2 — Lekcja 4 (po zdanym egzaminie):**
+**Priorytet 2 — Lekcja 4 (rozpoczęta 3 lipca 2026, po zaliczonym Egzaminie #7):**
 - zmienne, typy danych String/int/boolean/double, proste operacje, wypisywanie w konsoli
 
 **Priorytet 3 — projekt poboczny (yeetrack.xyz), gdy będzie czas:**
